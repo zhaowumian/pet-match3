@@ -1,0 +1,103 @@
+@use '@/styles/variables.scss' as *;
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 24rpx 32rpx;
+  box-shadow: $shadow-card;
+  gap: $spacing-lg;
+}
+
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: 16rpx;
+}
+
+.levelName {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.comboTag {
+  flex-shrink: 0;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  animation: comboBounce 0.3s ease;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 16rpx;
+  border-radius: $radius-round;
+  background: $color-progress-bg;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: $radius-round;
+  background: linear-gradient(90deg, $color-primary 0%, $color-secondary 100%);
+  transition: width 0.35s ease;
+}
+
+.scoreText {
+  display: block;
+  margin-top: 12rpx;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.stepsBox {
+  flex-shrink: 0;
+  @include flex-center;
+  flex-direction: column;
+  min-width: 120rpx;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  padding: 16rpx 24rpx;
+}
+
+.stepsNum {
+  font-size: 48rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  line-height: 1.2;
+}
+
+.stepsDanger {
+  color: $color-error;
+}
+
+.stepsLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}
+
+@keyframes comboBounce {
+  0% {
+    transform: scale(0.4);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
