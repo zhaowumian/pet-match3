@@ -1,0 +1,14 @@
+@use '@/styles/variables.scss' as *;
+
+// 正方形棋盘：经典 padding-bottom 技巧保证宽高比，内部绝对定位格子
+.board {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background: $color-board-bg;
+  border: 3rpx solid $color-board-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-sizing: border-box;
+}
