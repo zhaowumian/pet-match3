@@ -1,0 +1,44 @@
+// ============================================
+// 主题配色变量 —— 缤纷糖果风（萌宠消消乐）
+// ============================================
+
+// 品牌主题色：糖果粉
+$color-primary: #ff6b9d;
+$color-primary-light: #ff9ebc;
+$color-primary-dark: #e84a80;
+
+// 辅助色
+$color-secondary: #ffb84c; // 活力橙
+$color-secondary-light: #ffd9a0;
+$color-accent: #7c5cff; // 梦幻紫
+$color-accent-light: #b3a1ff;
+
+// 功能色
+$color-success: #4cd08a;
+$color-warning: #ffb84c;
+$color-error: #f65e7c;
+$color-info: #5aa9ff;
+
+// 背景色
+$color-bg-page: #fff3f7;
+$color-bg-card: #ffffff;
+$color-bg-hover: #fff0f5;
+$color-bg-hero-start: #ffedf5; // 首页渐变起点
+$color-bg-hero-end: #e0f4ff; // 首页渐变终点
+$color-bg-mask: rgba(60, 20, 40, 0.55); // 弹窗遮罩
+
+// 文本色
+$color-text-primary: #1d2129;
+$color-text-secondary: #4e5969;
+$color-text-tertiary: #86909c;
+$color-text-disabled: #c9cdd4;
+$color-text-white: #ffffff;
+
+// 边框色
+$color-border: #ffe1ec;
+$color-divider: #fff0f5;
+
+// 棋盘相关
+$color-board-bg: rgba(255, 255, 255, 0.55);
+$color-board-border: #ffd3e3;
+$color-progress-bg: #ffe1ec; // 进度条底色
