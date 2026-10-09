@@ -1,0 +1,161 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: 24rpx $page-padding 48rpx;
+}
+
+// ===== 汇总卡片 =====
+.summaryCard {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+  border-radius: $radius-lg;
+  padding: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(255, 107, 157, 0.3);
+}
+
+.summaryEmoji {
+  font-size: 72rpx;
+  line-height: 1;
+}
+
+.summaryRight {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.summaryTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  @include text-ellipsis;
+}
+
+.summaryDesc {
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+// ===== 空状态 =====
+.empty {
+  margin-top: 64rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emptyEmoji {
+  font-size: 96rpx;
+  line-height: 1.2;
+}
+
+.emptyText {
+  margin-top: 24rpx;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+}
+
+.emptyTip {
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+// ===== 板块标题 =====
+.sectionTitle {
+  margin-top: 32rpx;
+  padding: 0 8rpx;
+}
+
+.sectionTitleText {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-text-secondary;
+}
+
+// ===== 榜单列表 =====
+.list {
+  margin-top: 24rpx;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: 24rpx 32rpx;
+
+  &:not(:last-child) {
+    border-bottom: 1rpx solid $color-divider;
+  }
+}
+
+.rank {
+  width: 72rpx;
+  text-align: center;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.itemSub {
+  margin-top: 4rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+}
+
+.itemScore {
+  flex-shrink: 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-secondary;
+}
+
+.itemScoreEmpty {
+  color: $color-text-disabled;
+  font-weight: $font-weight-normal;
+}
+
+// ===== 好友排行 =====
+.avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-round;
+  background: $color-bg-page;
+  @include flex-center;
+  font-size: 40rpx;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.meItem {
+  background: linear-gradient(90deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 107, 157, 0.02) 100%);
+}
+
+.meName {
+  color: $color-primary;
+  font-weight: $font-weight-bold;
+}
