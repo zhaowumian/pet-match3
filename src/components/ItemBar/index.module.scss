@@ -1,0 +1,88 @@
+@use '@/styles/variables.scss' as *;
+
+.bar {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: 24rpx;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background: $color-bg-card;
+  border: 3rpx solid transparent;
+  border-radius: $radius-lg;
+  padding: 16rpx 24rpx;
+  box-sizing: border-box;
+  box-shadow: $shadow-card;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.armed {
+  border-color: $color-primary;
+  background: $color-bg-hover;
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 157, 0.35);
+  animation: armedPulse 1s ease-in-out infinite;
+}
+
+.disabled {
+  opacity: 0.45;
+
+  &:active {
+    transform: none;
+  }
+}
+
+.emoji {
+  font-size: 44rpx;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.desc {
+  margin-top: 2rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+}
+
+.count {
+  flex-shrink: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.countEmpty {
+  color: $color-text-disabled;
+}
+
+@keyframes armedPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
