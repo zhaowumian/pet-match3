@@ -1,0 +1,196 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: 0 $page-padding 48rpx;
+}
+
+// ===== Hero 区 =====
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48rpx 0 32rpx;
+}
+
+.heroEmoji {
+  display: flex;
+  align-items: flex-end;
+  gap: $spacing-md;
+}
+
+.heroItem {
+  font-size: 56rpx;
+  animation: float 2.4s ease-in-out infinite;
+}
+
+.heroItemBig {
+  font-size: 80rpx;
+  animation: float 2.4s ease-in-out infinite 0.3s;
+}
+
+.title {
+  margin-top: 16rpx;
+  font-size: 56rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+  letter-spacing: 4rpx;
+}
+
+.subtitle {
+  margin-top: 12rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  text-align: center;
+}
+
+// ===== 开始按钮 =====
+.startButton {
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  @include flex-center;
+  box-shadow: 0 8rpx 24rpx rgba(255, 107, 157, 0.35);
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.startText {
+  color: $color-text-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  letter-spacing: 2rpx;
+}
+
+// ===== 关卡选择 =====
+.sectionTitle {
+  margin: 48rpx 0 24rpx;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.levelGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.levelCard {
+  position: relative;
+  width: calc((100% - #{$spacing-md} * 2) / 3);
+  background: $color-bg-card;
+  border: 3rpx solid transparent;
+  border-radius: $radius-lg;
+  padding: 24rpx 16rpx;
+  box-sizing: border-box;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.levelCurrent {
+  border-color: $color-primary;
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 157, 0.3);
+}
+
+.levelLocked {
+  opacity: 0.55;
+
+  &:active {
+    transform: none;
+  }
+}
+
+.levelId {
+  font-size: 48rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  line-height: 1.2;
+}
+
+.levelName {
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  max-width: 100%;
+}
+
+.levelBest {
+  margin-top: 8rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+  max-width: 100%;
+}
+
+.passBadge {
+  position: absolute;
+  top: 12rpx;
+  right: 12rpx;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: $radius-round;
+  background: $color-success;
+  color: $color-text-white;
+  font-size: 22rpx;
+  @include flex-center;
+  line-height: 1;
+}
+
+// ===== 统计卡片 =====
+.statCard {
+  display: flex;
+  align-items: center;
+  margin-top: 40rpx;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 32rpx 0;
+  box-shadow: $shadow-card;
+}
+
+.statItem {
+  flex: 1;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.statDivider {
+  width: 2rpx;
+  height: 64rpx;
+  background: $color-divider;
+}
+
+.statValue {
+  font-size: 44rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  line-height: 1.2;
+}
+
+.statLabel {
+  margin-top: 8rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12rpx);
+  }
+}
