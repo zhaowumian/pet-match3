@@ -1,0 +1,111 @@
+@use '@/styles/variables.scss' as *;
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $color-bg-mask;
+  @include flex-center;
+  z-index: 100;
+}
+
+.card {
+  width: 560rpx;
+  background: $color-bg-card;
+  border-radius: $radius-xl;
+  padding: 48rpx 40rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: payIn $transition-base ease-out;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.itemRow {
+  margin-top: 36rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  background: $color-bg-page;
+  border-radius: $radius-lg;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.itemEmoji {
+  font-size: 60rpx;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.itemName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.itemDesc {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.price {
+  margin-top: 32rpx;
+  font-size: 64rpx;
+  font-weight: $font-weight-bold;
+  color: #fa5151;
+}
+
+.payBtn {
+  margin-top: 36rpx;
+  width: 100%;
+  height: 92rpx;
+  background: #07c160;
+  border-radius: 46rpx;
+  @include flex-center;
+  transition: transform $transition-fast;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.payBtnText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: #ffffff;
+}
+
+.cancel {
+  margin-top: 28rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  padding: 8rpx 24rpx;
+}
+
+@keyframes payIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
