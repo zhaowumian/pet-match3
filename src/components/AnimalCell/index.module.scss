@@ -1,0 +1,96 @@
+@use '@/styles/variables.scss' as *;
+
+// 格子外壳：负责定位与移动过渡
+.cell {
+  position: absolute;
+  width: 12.5%;
+  height: 12.5%;
+  padding: 4rpx;
+  box-sizing: border-box;
+  transition: top 0.26s ease, left 0.26s ease;
+  z-index: 1;
+}
+
+// 动物主体：糖果质感
+.inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 18rpx;
+  @include flex-center;
+  box-shadow: inset 0 -5rpx 0 rgba(0, 0, 0, 0.08), 0 3rpx 6rpx rgba(0, 0, 0, 0.08);
+  border: 3rpx solid rgba(255, 255, 255, 0.85);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: popIn 0.28s ease backwards;
+}
+
+.emoji {
+  font-size: 42rpx;
+  line-height: 1;
+}
+
+// 选中态：放大高亮
+.selected {
+  z-index: 2;
+
+  .inner {
+    transform: scale(1.14);
+    border-color: $color-primary;
+    box-shadow: 0 0 0 4rpx rgba(255, 107, 157, 0.35), 0 4rpx 12rpx rgba(255, 107, 157, 0.4);
+    animation: none;
+  }
+}
+
+// 消除态：爆裂缩小消失
+.clearing {
+  z-index: 3;
+
+  .inner {
+    animation: popOut 0.28s ease forwards;
+  }
+}
+
+// 补充态：从棋盘顶部上方一格处滑落到目标位置（与已有元素的下落过渡同步）
+.falling {
+  z-index: 1;
+
+  .inner {
+    animation: fallIn 0.3s cubic-bezier(0.25, 0.6, 0.35, 1) backwards;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fallIn {
+  from {
+    transform: translateY(var(--fall-from, -100%));
+    opacity: 0.85;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
