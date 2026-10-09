@@ -1,0 +1,156 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: 24rpx $page-padding 48rpx;
+}
+
+// ===== 玩家卡片 =====
+.profileCard {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 32rpx;
+  box-shadow: $shadow-card;
+}
+
+.avatar {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: $radius-round;
+  background: linear-gradient(135deg, $color-primary-light 0%, $color-accent-light 100%);
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.avatarEmoji {
+  font-size: 56rpx;
+  line-height: 1;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.profileName {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.profileDesc {
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+}
+
+// ===== 区块标题 =====
+.sectionTitle {
+  margin: 48rpx 0 24rpx;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+// ===== 玩法说明 =====
+.rulesCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 8rpx 32rpx;
+  box-shadow: $shadow-card;
+}
+
+.ruleItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  padding: 24rpx 0;
+
+  &:not(:last-child) {
+    border-bottom: 1rpx solid $color-divider;
+  }
+}
+
+.ruleIndex {
+  flex-shrink: 0;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  color: $color-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  @include flex-center;
+  line-height: 1;
+}
+
+.ruleText {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+// ===== 进度管理 =====
+.dangerCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 32rpx;
+  box-shadow: $shadow-card;
+}
+
+.dangerInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dangerTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.dangerDesc {
+  margin-top: 8rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.dangerButton {
+  flex-shrink: 0;
+  height: $button-height-sm;
+  padding: 0 40rpx;
+  border-radius: 32rpx;
+  background: rgba(246, 94, 124, 0.1);
+  @include flex-center;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.96);
+  }
+}
+
+.dangerButtonText {
+  color: $color-error;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}
+
+.version {
+  display: block;
+  margin-top: 64rpx;
+  text-align: center;
+  font-size: $font-size-xs;
+  color: $color-text-disabled;
+}
